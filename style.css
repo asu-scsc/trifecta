@@ -1,0 +1,13 @@
+body {
+
+	background-image: url("img/background.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+div {
+	margin-left: 25%;
+	margin-right: 25%;
+	text-align: center;
+	
+}
