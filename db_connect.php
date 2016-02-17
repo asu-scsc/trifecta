@@ -7,16 +7,18 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "trifecta";
 
-$conn = new mysqli($servername, $username, $password);
-
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Ensure connection is valid
 
-if($conn->connect)error{
-	die("Connection has failed. Reason: " . $conn->connect_error);
+if(mysqli_connect_errno()){
+	printf("Connection has failed. Reason: ",  mysqli_connect_error());
+	exit();
 }
 
-echo "Connection made successfully"; // This line isn't reached if condition above is met.
+echo "Connection to database made successfully" . "<br/><br/>"; // This line isn't reached if condition above is met.
+
 
 ?>
 
