@@ -18,6 +18,20 @@
   display: inline;
 }
 
+.link {
+color: #333333;
+-o-transition: color 0.5s linear;
+-moz-transition: color 0.5s linear;
+-khtml-transition: color 0.5s linear;
+-webkit-transition: color 0.5s linear;
+-ms-transition: color 0.5s linear;
+transition: color 0.5s linear;
+}
+
+.link:hover {
+color: #ffd258;
+}
+
 .jumbotron {
   background-image:url('img/friendship.jpg');
   height: 500px;
