@@ -17,7 +17,7 @@ if(mysqli_connect_errno()){
 	exit();
 }
 
-echo "Connection to database made successfully" . "<br/><br/>"; // This line isn't reached if condition above is met.
+//echo "Connection to database made successfully" . "<br/><br/>"; // This line isn't reached if condition above is met.
 
 
 ?>

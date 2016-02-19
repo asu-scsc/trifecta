@@ -4,9 +4,27 @@
   <head>
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-    
     <link rel="stylesheet" type="type/css" href="styling.css">
-    
+    <script src="http://code.jquery.com/jquery-2.2.0.min.js"> </script>
+	
+	
+	<script>
+		function showHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("tag1_ajax").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						document.getElementById("tag1_ajax").innerHTML = xmlhttp.responseText;
+					}
+				};
+				xmlhttp.open("GET", "getcount.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+</script>
   </head>
 
   <body>
@@ -40,7 +58,8 @@
                 <div class="col-md-4">           	
                     <div id= "tag1" class="thumbnail">
                     	<!--<form>-->
-                        	<i>Quality:</i> <input type="text" name="tag1" value="Ambition"><br/>
+                        	<i>Quality:</i> <input type="text" name="tag1" value="Ambition" onkeyup="showHint(this.value)"><br/>
+							<p>Matches: <span id="tag1_ajax"></span></p>
                             <!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
                         <!--</form>-->
                         <!--<img src = "img/jayPuffin.jpg">-->
