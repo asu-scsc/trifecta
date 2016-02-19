@@ -3,6 +3,7 @@
 // This PHP Script handles querying the database for matches of tags
 // But this only previews the total number.
 
+
 require('db_connect.php');
 
 // Testing SQL counting number of row matches for each tag
@@ -14,7 +15,7 @@ $tag3 = $_POST["tag3"] =  // tag3
  
 // SQL Query
 $sql1 = "SELECT COUNT(*) AS tag_total1 FROM user WHERE tag1 = 'Harry Potter'";
-$sql2 = "SELECT COUNT(*) AS tag_total2 FROM user WHERE tag2  = 'Harry Potter'"; 
+$sql2 = "SELECT COUNT(*) AS tag_total2 FROM user WHERE tag2 = 'Harry Potter'"; 
 $sql3 = "SELECT COUNT(*) AS tag_total3 FROM user WHERE tag3 = 'Harry Potter'";
 
 $result1 = mysqli_query($conn, $sql1);

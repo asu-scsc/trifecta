@@ -138,19 +138,47 @@ form {
 
 /* Results Page html css file */
 
+#navigation {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	border-style: solid;
+	border-color: #111;
+	border-width: 1px 5px 1px 5px;
+	/*border: 1px solid #111;*/
+    background-color: #333;
+	margin-left: -10px;
+	margin-right: -10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navigational_Bar li {
+	float: left;
+	background-color: #333;
+}
+
+
 .navigational_Bar a {
-	color: #000000;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	/*color: #000000;
 	text-transform: uppercase; 
 	text-decoration: none; 
-	padding: 6px 18px 5px 18px;
+	padding: 6px 20px 5px 20px;*/
 }
 
-a:hover, a.on {
-	color: #cc3333;
-	background-color: #ffffff;
+.navigational_Bar a:hover {
+    background-color: #4CAF50;
 }
 
-.navigational_Bar #navigation {
+/*.navigational_Bar #navigation {
 	width: 570px;
 	padding: 15px;
 	margin: 0px auto 0px auto;
@@ -170,37 +198,62 @@ a:hover, a.on {
 	display: inline;
 	margin: 75px;
 	border-bottom: 1px solid #000;
+}*/
+
+
+
+.results_Attributes div {
+	background: #cdccc1;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding: 20px 20px 20px 20px; 
+	height: 150px;
 }
 
+.over_all_lists li {
+	list-style-type: none;
+	padding:20px;
+	margin-top:30px;
+	margin-left: -10px;
+	margin-right: -10px;
+	background-color: /*#1abc9c*/ #fff;
+	height:1500px;
+}
 
-
-#result1 {
-	background: #ffe5e5;
+/*#result1 {
+	background: #b1a4b1;
 	margin-bottom: 10px;
-	padding: 14px 5px 14px 5px;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-top: 14px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 14px;
 	height: 150px;
 }
 #result2 {
-	background: #ffe5e5;
+	background: #b1a4b1;
 	padding: 14px 5px 14px 5px;
 	margin-bottom: 10px;
 	height: 150px;
 }
 #result3 {
-	background: #ffe5e5;
+	background: #b1a4b1;
 	padding: 14px 5px 14px 5px;
 	margin-bottom: 10px;
 	height: 150px;
 }
 #result4 {
-	background: #ffe5e5;
+	background: #b1a4b1;
 	padding: 14px 5px 14px 5px;
 	margin-bottom: 10px;
 	height: 150px;
 }
 #result5 {
-	background: #ffe5e5;
-	padding: 14px 5px 14px 5px;
+	background: #b1a4b1;
+	padding: 14px 0px 14px 0px;
 	margin-bottom: 10px;
 	height: 150px;
 }
@@ -208,52 +261,4 @@ a:hover, a.on {
 	margin-left: 25%;
 	margin-right: 25%;
 	margin-bottom : 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Old stuff. */
-
-
-#middle {
-	background-color: #c34042
-	/*margin-right: 25%;*/
-	/*text-align: center;*/
-}
-
-#thoughts {
-	/* Setting the head title with caps lettering, spacing between characters, centering the text as well. */
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 0.2em;
-	font-weight: bold;
-	text-align: center;
-	padding-top: 25px;
-	padding-bottom: 25px;
-}
-
-#tMoney {
-	height: 170px;
-	width: 170px;
-	/*box-shadow: rgba(0,0,0,0.2) 10px 10px;*/
-}
-
-#tHarry {
-	width: 45%;
-	float: right;
-} 
-
-#tBirth {
-	width: 45%;
-	float: left;
-}
+}*/
