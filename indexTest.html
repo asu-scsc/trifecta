@@ -4,22 +4,41 @@
   <head>
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-    
     <link rel="stylesheet" type="type/css" href="styling.css">
-    
+    <script src="http://code.jquery.com/jquery-2.2.0.min.js"> </script>
+	
+	
+	<script>
+		function showHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("tag1_ajax").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						document.getElementById("tag1_ajax").innerHTML = xmlhttp.responseText;
+					}
+				};
+				xmlhttp.open("GET", "getcount.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+</script>
+	
   </head>
 
   <body>
-    <div>
-      <div id="navigation" class="navigational_Bar" style="position:static; padding-left: 30px;padding-right: 30px;width: 100%; margin: 0px">
-        <ul style="float:right;list-style-type:none; list-style-type: none; margin: 0;padding: 0;overflow: hidden;">
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
           <li><a href="#">Sign Up</a></li>
           <li><a href="#">Login</a></li>
         </ul>
-        <!--<ul class="pull-left">-->
+        <ul class="pull-right">
           <li><a href="#">Query Qualities</a></li>
           <li><a href="#">About Us</a></li>
-        <!--</ul>-->
+        </ul>
       </div>
     </div>
 
@@ -40,7 +59,8 @@
                 <div class="col-md-4">           	
                     <div id= "tag1" class="thumbnail">
                     	<!--<form>-->
-                        	<i>Quality:</i> <input type="text" name="tag1" value="Ambition"><br/>
+                        	<i>Quality:</i> <input type="text" name="tag1" value="Ambition" onkeyup="showHint(this.value)"><br/>
+							<p>Matches: <span id="tag1_ajax"></span></p>
                             <!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
                         <!--</form>-->
                         <!--<img src = "img/jayPuffin.jpg">-->
@@ -52,7 +72,7 @@
                 <div class="col-md-3">
                     <div id="tag2" class="thumbnail">
                    	  	<!--<form>-->
-                        	<i>Quality:</i> <input type="text" name="tag2" value="Aspiring"><br/>
+                        	<i>Quality:</i> <input type="text" name="tag2" value="Aspiring" onkeyup="showHint(this.value) ><br/>
 							<!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
                         <!--</form>-->
                         <!--<img src="img/wutangstatenisland.jpg">-->
@@ -64,7 +84,7 @@
                 <div class="col-md-4">
                     <div id="tag3" class="thumbnail">
                     	<!--<form>-->
-                        	<i>Quality: </i><input type="text" name="tag3" value="Understanding">
+                        	<i>Quality: </i><input type="text" name="tag3" value="Understanding" onkeyup="showHint(this.value)>
                         	<!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
                         	<br/>
                         <!--</form>-->
