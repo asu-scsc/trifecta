@@ -18,20 +18,6 @@
   display: inline;
 }
 
-.link {
-color: #333333;
--o-transition: color 0.5s linear;
--moz-transition: color 0.5s linear;
--khtml-transition: color 0.5s linear;
--webkit-transition: color 0.5s linear;
--ms-transition: color 0.5s linear;
-transition: color 0.5s linear;
-}
-
-.link:hover {
-color: #ffd258;
-}
-
 .jumbotron {
   background-image:url('img/friendship.jpg');
   height: 500px;
@@ -152,7 +138,7 @@ form {
 
 /* Results Page html css file */
 
-#navigation {
+#navigation  {
 	list-style-type: none;
     margin: 0;
     padding: 0;
@@ -169,13 +155,18 @@ form {
     width: 100%;
 }
 
-.navigational_Bar li {
+.navigational_Bar li  {
+	list-style-type: none;
 	float: left;
 	background-color: #333;
 }
 
+.navigational_Bar ul  {
+	list-style-type: none;
+	background-color: #333;
+}
 
-.navigational_Bar a {
+.navigational_Bar  a{
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	display: block;
     color: white;
