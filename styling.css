@@ -140,24 +140,23 @@ form {
 
 #navigation  {
 	list-style-type: none;
-    margin: 0;
+    margin: 0 ;
     padding: 0;
     overflow: hidden;
 	border-style: solid;
 	border-color: #111;
-	border-width: 1px 5px 1px 5px;
+	/*border-width: 1px 5px 1px 5px;*/
 	/*border: 1px solid #111;*/
     background-color: #333;
-	margin-left: -10px;
-	margin-right: -10px;
+	margin-left: -330px;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 375px;
 }
 
 .navigational_Bar li  {
 	list-style-type: none;
-	float: left;
+	float: right;
 	background-color: #333;
 }
 
@@ -181,6 +180,20 @@ form {
 
 .navigational_Bar a:hover {
     background-color: #4CAF50;
+}
+
+.text{
+color: #333333;
+-o-transition: color 0.5s linear;
+-moz-transition: color 0.5s linear;
+-khtml-transition: color 0.5s linear;
+-webkit-transition: color 0.5s linear;
+-ms-transition: color 0.5s linear;
+transition: color 0.5s linear;
+}
+
+.text:hover {
+color: #ffd258;
 }
 
 /*.navigational_Bar #navigation {
