@@ -11,17 +11,27 @@
 	
 	<script>
 		function showHint(str) {
-			if (str.length == 0) { 
-				document.getElementById("tag1_ajax").innerHTML = "";
+			if (str.length == 0) { 										// Continuously checking the onkeyup's html form text type entries for entry.
+				document.getElementById("tag1_ajax").innerHTML = "";		// Until entry set all query p results to blank text.
+				document.getElementById("tag2_ajax").innerHTML = "";
+				document.getElementById("tag3_ajax").innerHTML = "";
 				return;
-			} else {
-				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.onreadystatechange = function() {
+			} else {														// We enter into this conditional once we receive input in any form text field.
+				var xmlhttp = new XMLHttpRequest();						// Create XMLHTTP request object.
+				xmlhttp.onreadystatechange = function() {				// Create function when server response is ready to execute query.
 					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-						document.getElementById("tag1_ajax").innerHTML = xmlhttp.responseText;
+						if (document.getElementById("tagUno").value == str) {	// Check if first textfield is entered, if so work with this one.
+							document.getElementById("tag1_ajax").innerHTML = xmlhttp.responseText;	// Set the text to hold xml results.
+						}
+						if (document.getElementById("tagDos").value == str) {	// Check if second textfield is entered, if so work with this one.
+							document.getElementById("tag2_ajax").innerHTML = xmlhttp.responseText;	// Set the text to hold xml results.	
+						}
+						if (document.getElementById("tagTres").value == str) {	// Check if third textfield is entered, if so work with this one.
+							document.getElementById("tag3_ajax").innerHTML = xmlhttp.responseText;	// Set the text to hold xml results.
+						}
 					}
 				};
-				xmlhttp.open("GET", "getcount.php?q=" + str, true);
+				xmlhttp.open("GET", "getcount.php?q=" + str, true);		// Send the request off to a php file on the server.
 				xmlhttp.send();
 			}
 		}
@@ -50,50 +60,34 @@
     <div class="neighborhood-guides">
       <div class="container">
             <h2>Concept</h2>
-        <p>Query 3 characteristics and we'll match you up with similar people.</p>
-            <!--<div class="row">-->
-            
+        	<p>Query 3 characteristics and we'll match you up with similar people.</p>            
             <form>
                 <div class="col-md-4">           	
                     <div id= "tag1" class="thumbnail">
-                    	<!--<form>-->
-                        	<i>Quality:</i> <input type="text" name="tag1" value="Ambition" onkeyup="showHint(this.value)"><br/>
-							<p>Matches: <span id="tag1_ajax"></span></p>
-                            <!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
-                        <!--</form>-->
-                        <!--<img src = "img/jayPuffin.jpg">-->
+                        	<i>Quality:</i> <input type="text" name="tag1" id="tagUno" value="Ambition" onkeyup="showHint(this.value)"><br/>
+							<!-- Print out results of matches into p field!-->
+                            <p>Matches: <span id="tag1_ajax"></span></p>
                     </div>
-                    <!--<div class="thumbnail">
-                        <img src="img/wutangstatenisland.jpg">
-                    </div>-->
                 </div>
                 <div class="col-md-3">
                     <div id="tag2" class="thumbnail">
-                   	  	<!--<form>-->
-                        	<i>Quality:</i> <input type="text" name="tag2" value="Aspiring"><br/>
-							<!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
-                        <!--</form>-->
-                        <!--<img src="img/wutangstatenisland.jpg">-->
+                        	<i>Quality:</i> <input type="text" name="tag2" id="tagDos" value="Aspiring" onkeyup="showHint(this.value)"><br/>
+                            <!-- Print out results of matches into p field!-->
+                            <p>Matches: <span id="tag2_ajax"></span></p>
                     </div>
-                    <!--<div class="thumbnail">
-                        <img src = "img/kaku.jpg">
-                    </div>-->
                 </div>
                 <div class="col-md-4">
                     <div id="tag3" class="thumbnail">
-                    	<!--<form>-->
-                        	<i>Quality: </i><input type="text" name="tag3" value="Understanding">
-                        	<!--<input class="fsSubmitButton" type="submit" value="Let's Do It!">-->
+                        	<i>Quality: </i><input type="text" name="tag3" id="tagTres" value="Understanding" onkeyup="showHint(this.value)">
                         	<br/>
-                        <!--</form>-->
-                        <!--<img src="img/blackwhitefriends.jpg">-->
+                            <!-- Print out results of matches into p field!-->
+                            <p>Matches: <span id="tag3_ajax"></span></p>
                     </div>
                 </div>
                 <div>
                	  <input class="fsSubmitButton" type="submit" value="Let's Do It!">
                 </div> 	
             </form>
-            <!--</div>-->
       </div>
     </div>
     <div class="learn-more">
