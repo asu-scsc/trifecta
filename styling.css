@@ -18,6 +18,20 @@
   display: inline;
 }
 
+.text{
+color: #333333;
+-o-transition: color 0.5s linear;
+-moz-transition: color 0.5s linear;
+-khtml-transition: color 0.5s linear;
+-webkit-transition: color 0.5s linear;
+-ms-transition: color 0.5s linear;
+transition: color 0.5s linear;
+}
+
+.text:hover {
+color: #ffd258;
+}
+
 .jumbotron {
   background-image:url('img/friendship.jpg');
   height: 500px;
@@ -27,6 +41,7 @@
 
 .jumbotron .container {
   position: relative;
+  float:left;
   top:100px;
 }
 
@@ -139,30 +154,33 @@ form {
 /* Results Page html css file */
 
 #navigation  {
-	list-style-type: none;
+list-style-type: none;
     margin: 0 ;
     padding: 0;
     overflow: hidden;
-	border-style: solid;
-	border-color: #111;
-	/*border-width: 1px 5px 1px 5px;*/
-	/*border: 1px solid #111;*/
+    border-style: solid;
+    border-color: #444;
+    border-width: 1px 5px 1px 5px;
+    border: 2px solid #444;
     background-color: #333;
-	margin-left: -330px;
-    position: fixed;
+    position: relative;
     top: 0;
-    width: 375px;
+    width: 370px;
 }
 
 .navigational_Bar li  {
 	list-style-type: none;
-	float: right;
+	list-style-type:none;
 	background-color: #333;
 }
 
 .navigational_Bar ul  {
 	list-style-type: none;
 	background-color: #333;
+	float:right;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 .navigational_Bar  a{
@@ -170,7 +188,8 @@ form {
 	display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    float:left;
+    padding: 15px 16px;
     text-decoration: none;
 	/*color: #000000;
 	text-transform: uppercase; 
@@ -180,20 +199,6 @@ form {
 
 .navigational_Bar a:hover {
     background-color: #4CAF50;
-}
-
-.text{
-color: #333333;
--o-transition: color 0.5s linear;
--moz-transition: color 0.5s linear;
--khtml-transition: color 0.5s linear;
--webkit-transition: color 0.5s linear;
--ms-transition: color 0.5s linear;
-transition: color 0.5s linear;
-}
-
-.text:hover {
-color: #ffd258;
 }
 
 /*.navigational_Bar #navigation {
