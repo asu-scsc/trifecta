@@ -12,10 +12,17 @@
 	<script>
 		function showHint(str) {
 			if (str.length == 0) { 										// Continuously checking the onkeyup's html form text type entries for entry.
-				document.getElementById("tag1_ajax").innerHTML = "";		// Until entry set all query p results to blank text.
-				document.getElementById("tag2_ajax").innerHTML = "";
-				document.getElementById("tag3_ajax").innerHTML = "";
+				if (document.getElementById("tagUno").value == str)		// Edited to check each tag individually since clearing out the default text automatically cleared previously-done tags. 
+					document.getElementById("tag1_ajax").innerHTML = "";
+					
+				if (document.getElementById("tagDos").value == str) 
+					document.getElementById("tag2_ajax").innerHTML = "";
+				
+				if (document.getElementById("tagTres").value == str)
+					document.getElementById("tag3_ajax").innerHTML = "";
+					
 				return;
+				
 			} else {														// We enter into this conditional once we receive input in any form text field.
 				var xmlhttp = new XMLHttpRequest();						// Create XMLHTTP request object.
 				xmlhttp.onreadystatechange = function() {				// Create function when server response is ready to execute query.
@@ -54,7 +61,7 @@
       <div class="container">
         <h1>Friend Finder</h1>
         <p>Find Your True Quality Friends.</p>
-        <p><a href="#">Get Started</a></p>
+        <p><a href="registration.php">Get Started</a></p>
       </div>
     </div> 
     <div class="neighborhood-guides">
@@ -66,14 +73,14 @@
                     <div id= "tag1" class="thumbnail">
                         	<i>Quality:</i> <input type="text" name="tag1" id="tagUno" value="Ambition" onkeyup="showHint(this.value)"><br/>
 							<!-- Print out results of matches into p field!-->
-                            <p>Matches: <span id="tag1_ajax"></span></p>
+                            <p>Single Matches: <span id="tag1_ajax"></span></p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div id="tag2" class="thumbnail">
                         	<i>Quality:</i> <input type="text" name="tag2" id="tagDos" value="Aspiring" onkeyup="showHint(this.value)"><br/>
                             <!-- Print out results of matches into p field!-->
-                            <p>Matches: <span id="tag2_ajax"></span></p>
+                            <p>Single Matches: <span id="tag2_ajax"></span></p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -81,7 +88,7 @@
                         	<i>Quality: </i><input type="text" name="tag3" id="tagTres" value="Understanding" onkeyup="showHint(this.value)">
                         	<br/>
                             <!-- Print out results of matches into p field!-->
-                            <p>Matches: <span id="tag3_ajax"></span></p>
+                            <p>Single Matches: <span id="tag3_ajax"></span></p>
                     </div>
                 </div>
                 <div>
@@ -113,37 +120,3 @@
 	</div>
   </body>
 </html>
-
-<!--<!doctype html>
-<html>
-    <head>
-    	<title>Index Sign</title>
-        <link rel="stylesheet" type="type/css" href="styling.css">
-    </head>
-    
-    <body>
-    	<div id = "middle">
-            <h1 id= "thoughts" style="font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif">Welcome To Friend Finder!</h1>
-                <table border= "2px">
-                    <tr>
-                        <td>
-                            <p><img id= "tMoney" src="img/trevorMoney.jpg" />
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                       <td>
-                            <p><img id= "tHarry" src="img/harryTrevor.jpg" />
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p><img id= "tBirth" src="img/trevorBirth.jpg" />
-                            </p>
-                        </td>
-                    </tr>                                                                
-                </table>        
-		</div>                
-    </body>
-</html>-->
