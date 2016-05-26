@@ -8,7 +8,7 @@ $q = $_REQUEST["q"]; // Query from onChange
 
 if ($q !== ""){
 
-	$sql = "SELECT COUNT(*) AS tag_total1 FROM user WHERE tag1 = '$q'";
+	$sql = "SELECT COUNT(*) AS tag_total1 FROM user WHERE tag1 = '$q' OR tag2 = '$q' OR tag3='$q'";
 	
 	$result1 = mysqli_query($conn, $sql);
 	//if($result1 === FALSE){
